@@ -1,0 +1,158 @@
+
+/* ===== Primary Styles ========================================================
+   Author: syssgx (http://github.com/syssgx)
+   ========================================================================== */
+
+	body {
+		padding-top: 60px;
+		padding-bottom: 40px;
+		overflow-y: scroll;
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAZCAYAAAC/zUevAAAAgUlEQVR42u2X0QYAIRBF7/9/bk+l1LLclbJPh+wyw5XMnBhTrjSmyDk/cpzIay7ovVtboeH9IM7LBa21VS6811LKKucxr5TSqLW+6kRevFPOi8+c85oAw8f34p1xXnzGnBe/7Twv3innhWfO+U+8jvCO8I7wjvCO8I7feofj/D/kAijNr7H19kq2AAAAAElFTkSuQmCC");
+	}
+	
+	a:focus, a:active { outline: none; }
+	
+	p { font-size: 14px; }
+	
+	.maintabs { padding-top: 30px; }
+	
+	.files_wrapper {
+		margin-top: 5px;
+		padding: 10px;
+		border-radius: 5px;
+		border: 1px solid rgb(221,221,221);
+		transition: all 0.2s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+	}
+	
+	.files_wrapper:hover {
+		background: #ebebeb;
+		-moz-box-shadow:    0px 0px 3px black;
+		-webkit-box-shadow: 0px 0px 3px black;
+		box-shadow:         0px 0px 3px black;
+	}
+	
+	.xmlarea_file {
+		border: 2px dashed rgb(221,221,221);
+		border-radius: 5px;
+		padding: 25px;
+		text-align: center;
+		font-size: 14px;
+	}
+	
+	.xmlarea_file:hover { border: 2px solid white; }
+	
+	.t-left { display: inline; }
+	
+	.t-right1, .t-right2 {
+		float: right;
+		position: relative;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		cursor: pointer;
+		top: 8px;
+		right: 5px;
+		color: #00008F;
+	}
+	
+	.xmllint-info1, .xmllint-info2 {
+		float: right;
+		position: relative;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		cursor: pointer;
+		top: 15px;
+		right: 6px;
+		color: #00008F;
+	}
+	
+	.xmlarea_text {
+		clear: both;
+		width: 100%;
+		min-height: 80px;
+		min-width: 940px;
+		max-width: 940px;
+	}
+	
+	.valfileoutput, .valoutput {
+		margin-top: 5px;
+		border-radius: 5px;
+		border: 2px solid rgb(221,221,221);
+	}
+	
+	.valfiletext, .valtext {
+		width: auto;
+		text-align: center;
+		padding: 15px;
+		font-size: 15px;
+		font-weight: bold;
+	}
+	
+	.valColor1 {
+		border: 2px solid #5FE75F;
+		background: #DCFADC;
+	}
+	
+	.valColor2 {
+		border: 2px solid #FF6347;
+		background: #FFCBC2;
+	}	
+	
+	.console1, .console2 {
+		cursor: default !important;
+		padding: 5px 5px 12px 12px !important;
+		background: rgba(0,0,0,0.9) !important;
+		color: #f4f4f4 !important;
+		font-family: monospace !important;
+		font-size: 12px !important;
+		width: 920px !important;
+		min-height: 80px !important;
+		border: 1px solid black !important;
+		border-radius: 8px !important;
+		-moz-box-shadow:    0px 0px 2px black !important;
+		-webkit-box-shadow: 0px 0px 2px black !important;
+		box-shadow:         0px 0px 2px black !important;
+	}
+	
+	.CodeMirror pre {
+		color: #f8f8f8;
+		line-height: 14px;
+	}
+	
+	.CodeMirror-gutter {
+		border-radius: 8px 0px 0px 8px;
+	}
+	
+	.CodeMirror-fullscreen {
+		display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        margin: 0;
+        padding: 0;
+        border: 0px solid #BBBBBB;
+        opacity: 1;
+    }
+	
+	span.CodeMirror-matchhighlight { background: #0A74FF !important; }
+	.CodeMirror-focused span.CodeMirror-matchhighlight { background: #0A74FF !important; }
+	.activeline { background: #001B3D !important; }
+	
+	.valBtn {
+		display: block;
+		width: auto;
+		padding: 22px 22px;
+		user-select: none;
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		font-size: 24px;
+		font-weight: bold;
+		margin-top: 30px;
+	}
+	

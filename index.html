@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>xml.js</title>
+	<meta name="description" content="JavaScript Client Side XML Schema Validation">
+	<meta name="author" content="syssgx, kripken">
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/night.css">
+    <link rel="stylesheet" href="css/codemirror.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+		
+		<h1>&lt; xml.js &gt;</h1>
+		<h2>JavaScript XML Schema Validation</h2>
+		
+		<div class="tabbable maintabs">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#tab1" data-toggle="tab"><h4>XML Files</h4></a></li>
+				<li><a href="#tab2" data-toggle="tab"><h4>XML Text</h4></a></li>			
+			</ul>
+			
+			<div class="tab-content">
+				<div class="tab-pane active fade in" id="tab1">
+					<p><h3>XML file to validate:</h3>
+						<div class="files_wrapper">
+							<div class="xmlarea_file" id="xml_file">Drop your xml file here</div>
+						</div>
+					<p><h3>XML Schema:</h3>
+						<div class="files_wrapper">
+							<div class="xmlarea_file" id="schema_file">Drop your schema file here</div>
+						</div>
+					<br>
+					<p><h2>Output:</h2>
+						<div class="valfileoutput">
+							<div class="valfiletext">ready</div>
+						</div>
+					<br>
+					<p><h2 class="t-left">Console:</h2><div class="xmllint-info1">xmllint info</div>
+						<textarea class="console1" readonly="readonly" rows="5"></textarea>
+					<br>
+					<a class="btn valBtn" id="fileBtn">Validate</a>
+					<br>
+				</div>
+				
+				<div class="tab-pane fade in" id="tab2">
+					<p><h3 class="t-left">XML file to validate:</h3><div class="t-right1">Load XML data from files tab</div>
+						<textarea class="xmlarea_text" id="xml_data" rows="6"></textarea>
+					<br>
+					<p><h3 class="t-left">XML Schema:</h3><div class="t-right2">Load Schema data from files tab</div>
+						<textarea class="xmlarea_text" id="schema_data" rows="6"></textarea>
+					<br>
+					<p><h2>Output:</h2>
+						<div class="valoutput">
+							<div class="valtext">ready</div>
+						</div>
+					<br>
+					<p><h2 class="t-left">Console:</h2><div class="xmllint-info2">xmllint info</div>
+						<textarea class="console2" readonly="readonly" rows="5"></textarea>
+					<br>
+					<a class="btn valBtn" id="textBtn">Validate</a>
+				</div>
+
+			</div>
+		</div>
+
+      <hr>
+
+      <footer>
+		<p>Built by <a href="http://github.com/syssgx">@syssgx</a> and based on <a href="http://github.com/kripken/xml.js">xml.js</a> by <a href="http://github.com/kripken">@kripken</a>.</p>
+        <p><img src="img/cc3.png"> Code licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> licence.</p>
+      </footer>
+
+    </div> <!-- /container -->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	<script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/libs/codemirror.js"></script>
+    <script src="js/libs/searchcursor.js"></script>
+    <script src="js/libs/match-highlighter.js"></script>
+    <script src="js/libs/xml.js"></script>
+	<script src="js/xmllint.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
