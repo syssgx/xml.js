@@ -25,7 +25,7 @@ $(document).ready(function() {
 		
 		var fileObject = e.originalEvent.dataTransfer,
 			files = fileObject.files,
-		    outputdiv, infodiv, filestring;
+		    outputdiv, filestring;
 			
 		outputdiv = "#" + $(this).attr("id");
 		
@@ -68,13 +68,21 @@ $(document).ready(function() {
 	$("#fileBtn").click(function() {
 		if (!xmlData) { $(".valfiletext").text("Set XML file"); return; }
 		if (!schemaData) { $(".valfiletext").text("Set Schema file"); return; }
+		if (schemaFileName === xmlFileName) { 
+			$(".valfileoutput").removeClass("valColor2").removeClass("valColor1");
+			$(".valfiletext").text("Filenames match"); 
+			return; 
+		}
 		$(".console1").val("");
 		$(".valfiletext").text("Validating...");
 
+		var tmpFileName;
+		(schemaFileName === xmlFileName) ? tmpFileName = (schemaFileName + "-file") : tmpFileName = schemaFileName;
+		
 		var Module = {
 			xml: xmlData,
 			schema: schemaData,
-			arguments: ["--noout", "--schema", schemaFileName, xmlFileName]
+			arguments: ["--noout", "--schema", tmpFileName, xmlFileName]
 		};
 		var result = validateXML(Module);
 		xmlInfo(result, ".valfileoutput", ".valfiletext", ".console1");
