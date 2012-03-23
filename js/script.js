@@ -16,6 +16,7 @@ $(document).ready(function() {
 			$(".console1").val("xmllint not loaded");
 			$(".console2").val("xmllint not loaded");
 		}
+		window.prettyPrint && prettyPrint();
 	})();
 	
 	var xmlData = 0, schemaData = 0,
@@ -48,7 +49,6 @@ $(document).ready(function() {
 						schemaData = e.target.result;
 						schemaFileName = f.name;
 					}
-					//(outputdiv.substr(1,3) === "xml") ? xmlData = e.target.result : schemaData = e.target.result;
 				};
 			})(f);
 		}
@@ -76,13 +76,10 @@ $(document).ready(function() {
 		$(".console1").val("");
 		$(".valfiletext").text("Validating...");
 
-		var tmpFileName;
-		(schemaFileName === xmlFileName) ? tmpFileName = (schemaFileName + "-file") : tmpFileName = schemaFileName;
-		
 		var Module = {
 			xml: xmlData,
 			schema: schemaData,
-			arguments: ["--noout", "--schema", tmpFileName, xmlFileName]
+			arguments: ["--noout", "--schema", schemaFileName, xmlFileName]
 		};
 		var result = validateXML(Module);
 		xmlInfo(result, ".valfileoutput", ".valfiletext", ".console1");
@@ -216,16 +213,18 @@ $(document).ready(function() {
 	var hlLine2 = editor2.setLineClass(0, "activeline");
 	editor2.setValue(" ");
 	
+	var xmllintInfo = "xmllint using libxml version 20708\n  compiled with: Tree Output Push Reader Patterns Writer " +
+					  "SAXv1 DTDValid HTML Legacy C14N Catalog XPath XPointer XInclude Iconv ISO8859X " + 
+					  "Unicode Regexps Automata Expr Schemas Schematron Modules Debug Zlib \n";
+	
 	$(".xmllint-info1").click(function() {
 		var cval = $(".console1").val();
-		$(".console1").val(cval + "\n" + "xmllint using libxml version 20708\n  compiled with: Tree Output Push Reader Patterns Writer " +
-			"SAXv1 DTDValid HTML Legacy C14N Catalog XPath XPointer XInclude Iconv ISO8859X Unicode Regexps Automata Expr Schemas Schematron Modules Debug Zlib \n");
+		$(".console1").val(cval + "\n" + xmllintInfo);
 	});
 
 	$(".xmllint-info2").click(function() {
 		var cval = $(".console2").val();
-		$(".console2").val(cval + "\n" + "xmllint using libxml version 20708\n  compiled with: Tree Output Push Reader Patterns Writer " +
-			"SAXv1 DTDValid HTML Legacy C14N Catalog XPath XPointer XInclude Iconv ISO8859X Unicode Regexps Automata Expr Schemas Schematron Modules Debug Zlib \n");
+		$(".console2").val(cval + "\n" + xmllintInfo);
 	});
 	
 	$(".tltp").tooltip({

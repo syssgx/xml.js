@@ -16,6 +16,17 @@
 	
 	.maintabs { padding-top: 30px; }
 	
+	#about>h3, #about>h4 {
+		text-align: center;
+	}
+	
+	.about-tab {
+		width: 600px; 
+		margin-left: auto; 
+		margin-right: auto; 
+		margin-top: 40px;
+	}
+	
 	.files_wrapper {
 		margin-top: 5px;
 		padding: 10px;
