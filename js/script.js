@@ -3,7 +3,6 @@
  
    Code licensed under CC BY 3.0 licence
    http://creativecommons.org/licenses/by/3.0/
-   
    ========================================================================== */
  
 $(document).ready(function() {
@@ -54,7 +53,7 @@ $(document).ready(function() {
 			})(f);
 		}
 
-		$(outputdiv).html(filestring).css("background", "#cccccc").css("border", "2px solid #808080");
+		$(outputdiv).html(filestring).css("background", "#B9B9F4").css("border", "2px solid #2222D3");
 	}
 	
 	function ignoreDrag(e) {
@@ -219,6 +218,12 @@ $(document).ready(function() {
 		var cval = $(".console2").val();
 		$(".console2").val(cval + "\n" + "xmllint using libxml version 20708\n  compiled with: Tree Output Push Reader Patterns Writer " +
 			"SAXv1 DTDValid HTML Legacy C14N Catalog XPath XPointer XInclude Iconv ISO8859X Unicode Regexps Automata Expr Schemas Schematron Modules Debug Zlib \n");
+	});
+	
+	$(".tltp").tooltip({
+		placement: "right",
+		delay: { show: 100, hide: 120 },
+		title: "F11 in editor toggles mode"
 	});
 	
 	$(".t-right1").click(function() {
